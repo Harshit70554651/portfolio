@@ -1,28 +1,29 @@
-import React, { useEffect, useMemo, useState } from 'react';
-import ParticleBackground from '../Componants/ParticalBackground';
-import { motion } from 'framer-motion';
-import like from "../assets/Images/like.jpeg"
+import React, { useEffect, useMemo, useState } from "react";
+import ParticleBackground from "../Componants/ParticalBackground";
+import { motion } from "framer-motion";
+import like from "../assets/Images/like.png";
+
 import {
   IoLogoInstagram,
   IoLogoGithub,
   IoLogoLinkedin,
-} from 'react-icons/io5';
+} from "react-icons/io5";
 
 const social = [
   {
     Icon: IoLogoInstagram,
-    label: 'Instagram',
-    href: 'https://www.instagram.com/',
+    label: "Instagram",
+    href: "https://www.instagram.com/",
   },
   {
     Icon: IoLogoGithub,
-    label: 'GitHub',
-    href: 'https://github.com/Harshit70554651',
+    label: "GitHub",
+    href: "https://github.com/Harshit70554651",
   },
   {
     Icon: IoLogoLinkedin,
-    label: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/harshit-shakya-1b9b5a326/',
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/harshit-shakya-1b9b5a326/",
   },
 ];
 
@@ -30,16 +31,16 @@ const glowVariants = {
   initial: {
     scale: 1,
     y: 0,
-    filter: 'drop-shadow(0 0 0px rgba(0, 0, 0, 0))',
+    filter: "drop-shadow(0 0 0px rgba(0,0,0,0))",
   },
 
   hover: {
     scale: 1.2,
     y: -3,
     filter:
-      'drop-shadow(0 0 8px rgba(13, 88, 204, 0.9)) drop-shadow(0 0 20px rgba(16, 185, 129, 0.8))',
+      "drop-shadow(0 0 8px rgba(13,88,204,0.9)) drop-shadow(0 0 20px rgba(16,185,129,0.8))",
     transition: {
-      type: 'spring',
+      type: "spring",
       stiffness: 300,
       damping: 10,
     },
@@ -48,9 +49,8 @@ const glowVariants = {
   tap: {
     scale: 0.8,
     y: 0,
-    filter: 'drop-shadow(0 0 0px rgba(0, 0, 0, 0))',
     transition: {
-      type: 'spring',
+      type: "spring",
       stiffness: 300,
       damping: 35,
     },
@@ -59,7 +59,12 @@ const glowVariants = {
 
 const Home = () => {
   const roles = useMemo(
-    () => ['MERN Full Stack Developer', 'Software Developer'],
+    () => [
+      "MERN Full Stack Developer",
+      "Frontend Developer",
+      "Backend Developer",
+      "Software Developer",
+    ],
     []
   );
 
@@ -67,23 +72,24 @@ const Home = () => {
   const [subindex, setSubIndex] = useState(0);
   const [deleting, setDeleting] = useState(false);
 
-  // Typing animation
+
+
   useEffect(() => {
-    const current = roles[index];
+    const currentRole = roles[index];
     let timeout;
 
-    if (!deleting && subindex < current.length) {
+    if (!deleting && subindex < currentRole.length) {
       timeout = setTimeout(() => {
         setSubIndex((prev) => prev + 1);
-      }, 100);
-    } else if (!deleting && subindex === current.length) {
+      }, 80);
+    } else if (!deleting && subindex === currentRole.length) {
       timeout = setTimeout(() => {
         setDeleting(true);
-      }, 1200);
+      }, 1300);
     } else if (deleting && subindex > 0) {
       timeout = setTimeout(() => {
         setSubIndex((prev) => prev - 1);
-      }, 50);
+      }, 45);
     } else if (deleting && subindex === 0) {
       timeout = setTimeout(() => {
         setDeleting(false);
@@ -95,112 +101,192 @@ const Home = () => {
   }, [subindex, index, deleting, roles]);
 
   return (
-    <div className="w-full min-h-screen">
+    <main className="w-full min-h-screen">
 
       <section
         id="home"
-        className="relative w-full min-h-screen bg-black overflow-hidden"
+        className="relative w-full min-h-screen overflow-hidden bg-black text-white"
       >
 
-        {/* Particle Background */}
+    
+
         <ParticleBackground />
 
-        {/* Background Glow */}
-        <div className="absolute inset-0 pointer-events-none">
+
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
 
           <div
-            className="absolute -top-32 -left-32
-            w-[70vw] sm:w-[50vw] md:w-[40vw]
-            h-[70vh] sm:h-[50vh] md:h-[40vh]
-            max-w-[500px] max-h-[500px]
-            rounded-full
-            bg-gradient-to-r from-[#302b63] via-[#00bf8f] to-[#1cd8d2]
-            opacity-40
-            blur-[100px] sm:blur-[130px] md:blur-[150px]
-            animate-pulse"
+            className=" absolute -top-32 -left-32 w-[420px] h-[420px] rounded-fullbg-gradient-to-r from-[#302b63] via-[#00bf8f]to-[#1cd8d2] opacity-30blur-[130px] animate-pulse
+            "
           />
 
           <div
-            className="absolute bottom-0 right-0
-            w-[70vw] sm:w-[50vw] md:w-[40vw]
-            h-[70vh] sm:h-[50vh] md:h-[40vh]
-            max-w-[500px] max-h-[500px]
-            rounded-full
-            bg-gradient-to-r from-[#302b63] via-[#00bf8f] to-[#1cd8d2]
-            opacity-40
-            blur-[100px] sm:blur-[130px] md:blur-[150px]
-            animate-pulse"
+            className="
+              absolute
+              -bottom-32
+              -right-32
+              w-[420px]
+              h-[420px]
+              rounded-full
+              bg-gradient-to-r
+              from-[#302b63]
+              via-[#00bf8f]
+              to-[#1cd8d2]
+              opacity-30
+              blur-[130px]
+              animate-pulse
+            "
           />
 
         </div>
 
-        {/* Main Content */}
+
         <div
-          className="relative z-10 w-full min-h-screen max-w-7xl
-          mx-auto grid grid-cols-1 lg:grid-cols-2
-          items-center px-6 sm:px-10 lg:px-16"
+          className="
+            relative
+            z-10
+            w-full
+            min-h-screen
+            max-w-7xl
+            mx-auto
+            grid
+            grid-cols-1
+            lg:grid-cols-2
+            items-center
+            px-6
+            sm:px-10
+            lg:px-16
+            py-20
+            lg:py-0
+          "
         >
 
-          {/* Left Content */}
+
           <div
-            className="flex flex-col justify-center
-            min-h-screen text-center lg:text-left
-            relative py-20"
+            className="
+              flex
+              items-center
+              justify-center
+              lg:justify-start
+              min-h-screen
+              lg:min-h-0
+              text-center
+              lg:text-left
+            "
           >
 
             <div
-              className="w-full max-w-[48rem] mx-auto
-              lg:mx-0 lg:pr-12"
+              className="
+                w-full
+                max-w-[650px]
+                lg:pr-10
+              "
             >
 
-              {/* Typing Animation */}
               <motion.div
-                className="mb-4 text-lg sm:text-2xl md:text-3xl
-                font-semibold text-white tracking-wide min-h-[2.5rem]"
-                initial={{ opacity: 0, y: 12 }}
+                className="
+                  min-h-[32px]
+                  sm:min-h-[38px]
+                  mb-3
+                  text-lg
+                  sm:text-xl
+                  md:text-2xl
+                  font-semibold
+                  tracking-wide
+                  text-white
+                  flex
+                  items-center
+                  justify-center
+                  lg:justify-start
+                "
+                initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                <span>{roles[index].substring(0, subindex)}</span>
+                <span>
+                  {roles[index].substring(0, subindex)}
+                </span>
 
                 <span
-                  className="inline-block w-[3px] h-[1em]
-                  ml-1 bg-white animate-pulse align-middle"
+                  className="
+                    inline-block
+                    w-[2px]
+                    h-[1.1em]
+                    ml-1
+                    bg-cyan-400
+                    animate-pulse
+                  "
                 />
               </motion.div>
 
-              {/* Main Heading */}
+
               <motion.h1
-                className="text-4xl sm:text-5xl md:text-6xl
-                lg:text-5xl font-bold text-transparent bg-clip-text
-                bg-gradient-to-r from-[#1cd8d2] via-[#00bf8f] to-[#302b63]
-                drop-shadow-lg leading-tight"
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 25 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay:0.2 }}
+                transition={{
+                  duration: 0.8,
+                  delay: 0.15,
+                  ease: "easeOut",
+                }}
+                className="
+                  text-3xl
+                  sm:text-4xl
+                  md:text-5xl
+                  lg:text-[52px]
+                  font-bold
+                  leading-[1.08]
+                  tracking-tight
+                "
               >
-                Hello, I Am
 
-                <br />
+                <span
+                  className="
+                    block
+                    text-transparent
+                    bg-clip-text
+                    bg-gradient-to-r
+                    from-[#1cd8d2]
+                    via-[#00bf8f]
+                    to-[#302b63]
+                  "
+                >
+                  Hello, I Am
+                </span>
 
-                <motion.span
-                  className="text-white text-5xl sm:text-6xl
-                  md:text-7xl lg:text-6xl inline-block mt-2"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.2, duration: 1 }}
+              
+
+                <span
+                  className="
+                    block
+                    mt-2
+                    text-white
+                    whitespace-nowrap
+                  "
                 >
                   Harshit Shakya
-                </motion.span>
+                </span>
+
               </motion.h1>
 
-              {/* Description */}
+
               <motion.p
-                className="mt-6 text-base sm:text-lg md:text-xl
-                text-gray-400 max-w-2xl mx-auto lg:mx-0 leading-relaxed"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4, duration: 1.2 }}
+                transition={{
+                  delay: 0.35,
+                  duration: 0.8,
+                }}
+                className="
+                  mt-5
+                  text-sm
+                  sm:text-base
+                  md:text-lg
+                  text-gray-400
+                  leading-7
+                  max-w-[590px]
+                  mx-auto
+                  lg:mx-0
+                "
               >
                 I’m a passionate MERN Stack Developer skilled in
                 building responsive, user-friendly web applications
@@ -208,44 +294,100 @@ const Home = () => {
                 solutions.
               </motion.p>
 
-              {/* Buttons */}
+          
               <motion.div
-                className="mt-8 flex flex-wrap items-center
-                justify-center lg:justify-start gap-5"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.6, duration: 0.8 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  delay: 0.5,
+                  duration: 0.7,
+                }}
+                className="
+                  mt-7
+                  flex
+                  flex-wrap
+                  items-center
+                  justify-center
+                  lg:justify-start
+                  gap-4
+                "
               >
 
-                <a
-                  href="#project"
-                  className="px-6 py-3 rounded-full font-medium
-                  text-base sm:text-lg text-white
-                  bg-gradient-to-r from-[#1cd8d2] via-[#00bf8f] to-[#302b63]
-                  shadow-lg hover:scale-105 transition-transform duration-300"
+
+                <motion.a
+                  href="#projects"
+                  whileHover={{
+                    scale: 1.05,
+                    boxShadow:
+                      "0 0 25px rgba(0,191,143,0.35)",
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                  className="
+                    px-6
+                    py-3
+                    rounded-full
+                    font-medium
+                    text-sm
+                    sm:text-base
+                    text-white
+                    bg-gradient-to-r
+                    from-[#1cd8d2]
+                    via-[#00bf8f]
+                    to-[#302b63]
+                    transition-all
+                  "
                 >
                   View My Work
-                </a>
+                </motion.a>
 
-                <a
+               
+                <motion.a
                   href="/resume.jpeg"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-6 py-3 rounded-full font-medium
-                  text-green-400 text-base sm:text-lg
-                  border border-gray-500
-                  hover:bg-white hover:text-black
-                  transition-all duration-300 bg-white"
+                  whileHover={{
+                    scale: 1.05,
+                    boxShadow:
+                      "0 0 20px rgba(255,255,255,0.15)",
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                  className="
+                    px-6
+                    py-3
+                    rounded-full
+                    font-medium
+                    text-sm
+                    sm:text-base
+                    text-green-500
+                    border
+                    border-gray-600
+                    bg-white
+                    hover:bg-gray-100
+                    transition-all
+                  "
                 >
                   My Resume
-                </a>
+                </motion.a>
 
               </motion.div>
 
-              {/* Social Icons */}
-              <div
-                className="mt-10 flex justify-center
-                lg:justify-start gap-6 text-2xl md:text-3xl"
+         
+
+              <motion.div
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  delay: 0.65,
+                  duration: 0.7,
+                }}
+                className="
+                  mt-8
+                  flex
+                  justify-center
+                  lg:justify-start
+                  gap-5
+                  text-2xl
+                "
               >
 
                 {social.map(({ Icon, label, href }) => (
@@ -259,46 +401,103 @@ const Home = () => {
                     initial="initial"
                     whileHover="hover"
                     whileTap="tap"
-                    className="text-gray-300 hover:text-white"
+                    className="
+                      text-gray-400
+                      hover:text-white
+                      transition-colors
+                    "
                   >
                     <Icon />
                   </motion.a>
                 ))}
 
-              </div>
+              </motion.div>
 
             </div>
           </div>
-<div className='relative hidden lg:block w-full h-full'>
-   <div 
-   className='absolute top-1/2 translate-y-1/2 pointer-events-none'
-   style={{
-    right: "10px", width: "min(22vw, 410px)", height: "min(40vh, 760px)", borderRadius: "50%",
-    filter: "blur(30px) ", opacity: 0.32, background:"conic-gradient( from 0deg, #1cd8d2, #00bf8f, #303b63, #1cd8d2)"
-   }}
-   />
-  <motion.img 
-    src={like} 
-    alt="Harshit" 
-    className='absolute top-1/2 -translate-y-1/2 object-contain pointer-events-none'
-    style={{
-      right: "-30px",
-      width: "min(45vw, 780px)",
-      maxHeight: "90vh"
-    }}
-    initial={{ opacity: 0, y: 40, scale: 0.98 }}
-    animate={{ opacity: 1, y: 0, scale: 1 }}
-    transition={{ delay: 0.2, duration: 0.8 }}
-  />
-</div>
 
-          <div>
-            < motion.img src="" alt="" />
+
+
+          <div
+            className="
+              relative
+              hidden
+              lg:flex
+              w-full
+              h-full
+              items-center
+              justify-center
+            "
+          >
+
+            {/* Image Glow */}
+
+            <motion.div
+              animate={{
+                scale: [1, 1.05, 1],
+                rotate: [0, 2, 0],
+              }}
+              transition={{
+                duration: 5,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              className="
+                absolute
+                right-[8%]
+                top-1/2
+                -translate-y-1/2
+                w-[260px]
+                h-[460px]
+                rounded-full
+                bg-gradient-to-b
+                from-[#1cd8d2]
+                via-[#00bf8f]
+                to-[#302b63]
+                opacity-25
+                blur-[55px]
+              "
+            />
+
+
+
+            <motion.img
+              src={like}
+              alt="Harshit Shakya"
+              draggable="false"
+              className="
+                relative
+                z-10
+                object-contain
+                pointer-events-none
+                select-none
+              "
+              style={{
+                width: "min(35vw, 560px)",
+                maxHeight: "78vh",
+              }}
+              initial={{
+                opacity: 0,
+                x: 40,
+                scale: 0.96,
+              }}
+              animate={{
+                opacity: 1,
+                x: 0,
+                scale: 1,
+              }}
+              transition={{
+                delay: 0.25,
+                duration: 0.9,
+                ease: "easeOut",
+              }}
+            />
+
           </div>
 
         </div>
       </section>
-    </div>
+    </main>
   );
 };
 

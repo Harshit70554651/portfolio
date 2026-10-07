@@ -3,7 +3,8 @@ import React, { useEffect, useMemo, useState } from 'react'
 
 const IntroAnimation = ({ onFinish }) => {
   const greeting = useMemo(() => [
-    "Hello", "", "Hola", "Bonjour", "Ciao", "01a", "Merhaba", "Hej", "Salam"
+    "Hello", "नमस्ते", "Hola", "Bonjour", "Ciao", "01a", "Merhaba", "Hej", "Salam" ,
+
   ], [])
 
   const [index, setIndex] = useState(0)
@@ -14,7 +15,7 @@ const IntroAnimation = ({ onFinish }) => {
       const id = setInterval(() => setIndex((i) => i + 1), 180)
       return () => clearInterval(id)
     } else {
-      const t = setTimeout(() => setVisible(false), 3000)
+      const t = setTimeout(() => setVisible(false), 300)
       return () => clearTimeout(t)
     }
   }, [index, greeting.length])

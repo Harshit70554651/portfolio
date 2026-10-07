@@ -3,10 +3,10 @@ import Navbar from './Componants/Navbar'
 import Home from './Sections/Home'
 import About from './Sections/About'
 import Skills from './Sections/Skills'
-import Project from './Sections/Project'
+import Project from './Sections/Projects'
 import Exprience from './Sections/Exprience'
 import Testimonial from './Sections/Testimonial'
-import Contect from './Sections/Contect'
+import Contact from './Sections/Contact'
 import Footer from './Sections/Footer'
 import ParticalBackground from "./Componants/ParticalBackground";
 import CustomCursor from './Componants/CustomCursor'
@@ -34,7 +34,7 @@ const App = () => {
       <Project/>
       <Exprience/>
       <Testimonial/>
-      <Contect/>
+      <Contact/>
       <Footer/>
     </div>
     )}
