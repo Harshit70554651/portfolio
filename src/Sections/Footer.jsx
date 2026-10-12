@@ -25,7 +25,8 @@ const Footer = () => {
     {
       icon: <IoLogoGithub />,
       name: "GitHub",
-      href: "https://github.com/",
+      href:"https://github.com/Harshit70554651"
+      
     },
     {
       icon: <IoLogoLinkedin />,
@@ -35,7 +36,7 @@ const Footer = () => {
     {
       icon: <IoLogoInstagram />,
       name: "Instagram",
-      href: "https://www.instagram.com/",
+      href: "https://www.instagram.com/your_harshit_3.0?exln=MWp1bGxnOHhqbTJnYg==",
     },
   ];
 
@@ -79,10 +80,6 @@ const Footer = () => {
           className="absolute w-1/2 h-full bg-gradient-to-r from-transparent via-cyan-400 to-transparent"
         />
       </div>
-
-      {/* =================================================
-          BACKGROUND GLOW
-      ================================================= */}
 
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
 

@@ -72,9 +72,7 @@ const Home = () => {
   const [subindex, setSubIndex] = useState(0);
   const [deleting, setDeleting] = useState(false);
 
-  // =========================
-  // TYPING ANIMATION
-  // =========================
+
 
   useEffect(() => {
     const currentRole = roles[index];
@@ -344,7 +342,7 @@ const Home = () => {
 
                
                 <motion.a
-                  href="/resume.jpeg"
+                  href="/resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{

@@ -3,7 +3,7 @@ import React, { useEffect, useMemo, useState } from 'react'
 
 const IntroAnimation = ({ onFinish }) => {
   const greeting = useMemo(() => [
-    "Hello", "", "Hola", "Bonjour", "Ciao", "01a", "Merhaba", "Hej", "Salam"
+    "Hello", "नमस्ते", "Hola", "Bonjour", "Ciao", "01a", "Merhaba", "Hej", "Salam" ,
 
   ], [])
 

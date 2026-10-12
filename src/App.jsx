@@ -6,7 +6,7 @@ import Skills from './Sections/Skills'
 import Project from './Sections/Projects'
 import Exprience from './Sections/Exprience'
 import Testimonial from './Sections/Testimonial'
-import Contect from './Sections/Contact'
+import Contact from './Sections/Contact'
 import Footer from './Sections/Footer'
 import ParticalBackground from "./Componants/ParticalBackground";
 import CustomCursor from './Componants/CustomCursor'
@@ -34,7 +34,7 @@ const App = () => {
       <Project/>
       <Exprience/>
       <Testimonial/>
-      <Contect/>
+      <Contact/>
       <Footer/>
     </div>
     )}
